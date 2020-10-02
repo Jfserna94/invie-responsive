@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Precios- Guitarras Invie </title>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;700&display=swap|Allerta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body>
+  	<header id="header" class="header background"><!-- header del sitio web -->
+  		<div class="contenedor">
+  		<figure class="logotipo precios"><!-- logotipo -->
+       	 	<img src="images/invie.png" width="186" height="60" alt="Invie logotipo"/>
+     	 </figure>
+        <span class="burger-button icon-menu" id="burger-button"></span>
+     	 <nav class="menu" id="menu"><!-- menu -->
+        	<ul>
+          	<li>
+           	 <a href="index.html">Home</a>
+          	</li>
+         	  <li>
+         	   <a href="index.html#guitarras">Guitarras</a>
+         	  </li>
+         	  <li>
+           	 <a href="precios.html">Precios</a>
+            </li>
+        	</ul>
+     	 </nav> 
+  		</div>
+    </header>
+    <section class="tabla">
+    	<div class="contenedor">
+    		<table>
+    		<thead>
+    			<tr>
+    				<th>Modelo</th>
+    				<th>Precio</th>
+    				<th>Descripción</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>Invie Classic</td>
+    				<td>$800.000 Pesos</td>
+    				<td>
+						<p>•Guitarra Eléctrica Tagima Tw61 Profesional Jazzmaster Tw-61</p>
+						<p>•Madera del cuerpo (Body): Madera Poplar</p>
+						<p>•Madera del mástil de la Guitarra (neck): Madera Maple</p>
+						<p>•Madera del diapasón (fingerboard): Madera</p>
+						<p>•Cejilla (Nut): 43 mm</p>
+						<p>•Electronica (Knobs): Selector de 3 posiciones , 1 control de volumen , 1 de tono y 1 varitone</p>
+						<p>•Tipo de Puente (bridge): Tremolo cromo</p>
+						<p>•Sintonizadores: Cromo</p>
+						<p>•Color: Fiesta Rojo, Sunburst, Negro</p>
+						<p>•Color de los herrajes: Negro, Blanco</p>
+					</td>
+				</tr>
+				<tr>
+					<td>Invie Acústica</td>
+    				<td>$200.000 Pesos</td>
+    				<td>
+						<p>•Guitarras en cedro con la más alta calidad en fabricación y sonido. Bien elaboradas, detalladas, buenas terminaciones</p>
+						<p>Cuerdas de naylon importadas, clavijero taiwanes. 1 metro de largo. Ideal para un guitarrista</p>
+						<p>Guitarra con con corte, para mayor comodidad al cuerpo. Diseños novedosos.</p>
+						<p>Variedad de colores</p>
+					</td>
+				</tr>
+				<tr>
+					<td>Invie Custom</td>
+    				<td>$XXXXXX Pesos</td>
+    				<td>
+						<p>•Guitarras Acusticas hechas a mano por nuestros expertos, el precio varia de acuerdo al tipo de material, madera, diseño y color que escoja el cliente.</p>
+						<p>Guitarras Electricas importadas y personalizables, el precio varia de acuerdo al diseño y color escogido por el cliente.</p>
+					</td>
+				</tr>
+    			</tr>
+    		</tbody>
+    		</table>
+    	</div>
+    </section>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+        <img src="images/invie-white.png" alt="logotipo-blanco">
+        <a href="tel:+573023164013"><strong>Teléfono</strong><span>3023164013</span></a>
+        <a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>contacto@invie.com</span></a>
+      </div>
+      <form class="formulario">
+       <div class="col1">
+         <label for="nombre">Nombre</label>
+        <input type="text"/ required="" id="nombre" name="nombre"/>
+        <label for="email">E-mail</label>
+        <input type="email" required id="email" name="email"/>
+        <div class="sexo">
+          <label for="mujer"> Mujer</label>
+          <input type="radio" id="mujer" name="sexo" value="mujer"/>
+          <label for="hombre"> Hombre</label>
+          <input type="radio" id="hombre" name="sexo" value="hombre"/>
+        </div>
+        <div class="intereses">
+          <label for="cotizacion">
+            <input type="checkbox" id="cotizacion" name="intereses" value="cotizacion">Cotización
+          </label>
+           <label for="reclamos">
+            <input type="checkbox" id="reclamos" name="intereses"value="reclamos">Reclamos
+          </label>
+           <label for="comentarios">
+            <input type="checkbox" id="comentarios" name="intereses" value="comentarios">Comentarios
+          </label>
+           <label for="otros">
+            <input type="checkbox" id="otros" name="intereses"value="otros">Otros
+          </label>
+        </div>
+       </div>
+        <div class="col2">
+          <label for="comentarios"> Comentarios</label>
+          <textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+          <input type="submit" value="Enviar" class="button"/>
+        </div>
+      </form>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script>
+      var consulta= window.matchMedia("(max-width:500px");
+      consulta.addListener(mediaQuery);
+
+      var burgerButton= document.getElementById("burger-button");
+      var menu= document.getElementById("menu");
+      function toggleMenu(){
+      menu.classList.toggle("active");
+      };
+
+      function mediaQuery(){
+        if (consulta.matches){
+        console.log("si cumple la condicion");
+        burgerButton.addEventListener("touchstart", toggleMenu); 
+        } else{
+          burgerButton.removeEventListener("touchstart", toggleMenu); 
+          console.log("no se cumple la condicion");
+        }
+      }
+        mediaQuery();
+
+        var bLazy = new Blazy({
+            selector:"img"
+        });
+    </script>
+  </body>
+  </html>

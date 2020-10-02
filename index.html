@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Invie- Guitarras </title>
+    <meta charset="utf-8"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;700&display=swap|Allerta&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/invie.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!-- <link rel="stylesheet" media="(max-width:800px)"  href="css/media-querie.css"/> -->
+  </head>
+  <body>
+    <section id="portada" class="portada background"> <!-- portada -->
+      <header id="header" class="header contenedor"><!-- header del sitio web -->
+      <figure class="logotipo"><!-- logotipo -->
+        <img src="images/invie.png" srcset="images/invie.png 1x, images/invie.png 2x" width="186" height="60" alt="Invie logotipo"/>
+      </figure>
+      <span class="burger-button icon-menu" id="burger-button"></span>
+      <nav class="menu" id="menu"><!-- menu -->
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#guitarras">Guitarras</a>
+          </li>
+          <li>
+            <a href="precios.html">Precios</a>
+          </li>
+        </ul>
+      </nav> 
+    </header>
+      <div class="contenedor">
+        <h1 class="titulo"> Guitarras Invie </h1> <!-- titulo --> 
+        <h3 class="title-a"> Sé la estrella de rock que siempre quisiste ser </h3> <!-- slogan/resumen -->
+        <a class="button" href="#guitarras"> Conoce más</a> <!-- boton -->
+    </div>
+    </section>
+    <section id="guitarras" class="guitarras contenedor"> <!-- guitarras-->
+      <h2> Nuestras guitarras</h2><!-- titulo -->
+      <div class="video-demo">
+        <div class="video-responsive-contenedor">
+          <iframe class="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/300np1qzdnA?start=4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <article class="guitarra"> <!-- guitarra1 -->
+        <img class="right"data-src="images/Guitarra-acustica.jpg" width="350" alt="Invie guitarra 1"/>
+        <div class="contenedor-guitarra-a">
+          <h3 class="title-b"> Invie Acústica </h3>
+          <ol>
+          <li> Estilo Vintage </li>
+          <li> Madera pura </li>
+          <li> Incluye estuche de aluminio </li>
+          </ol>
+        </div>
+      </article>
+      <article class="guitarra"> <!-- guitarra2 -->
+        <img class= "left"data-src="images/Guitarra-electrica.jpg" width="320" alt="Invie guitarra 2"/>
+        <div class="contenedor-guitarra-b">
+          <h3 class="title-b"> Invie Classic </h3>
+          <ol>
+          <li> Estilo Vintage </li>
+          <li> Liviana </li>
+          <li> Incluye correa para la guitarra </li>
+          </ol>
+        <div>
+      </article>
+    </section>
+    <footer class="footer">
+      <div class="contenedor">
+        <div class="contacto">
+        <img data-src="images/invie-white.png|images/invie-white2x.png" alt="logotipo-blanco">
+        <a href="tel:+573023164013"><strong>Teléfono</strong><span>3023164013</span></a>
+        <a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>contacto@invie.com</span></a>
+      </div>
+      <form class="formulario">
+       <div class="col1">
+         <label for="nombre">Nombre</label>
+        <input type="text"/ required="" id="nombre" name="nombre"/>
+        <label for="email">E-mail</label>
+        <input type="email" required id="email" name="email"/>
+        <div class="sexo">
+          <input type="radio" id="mujer" name="sexo" value="mujer"/>
+           <label for="mujer"> Mujer</label>
+          <input type="radio" id="hombre" name="sexo" value="hombre"/>
+            <label for="hombre"> Hombre</label>
+        </div>
+        <div class="intereses">
+          <label for="cotizacion">
+            <input type="checkbox" id="cotizacion" name="intereses" value="cotizacion">Cotización
+          </label>
+           <label for="reclamos">
+            <input type="checkbox" id="reclamos" name="intereses"value="reclamos">Reclamos
+          </label>
+           <label for="comentarios">
+            <input type="checkbox" id="comentarios" name="intereses" value="comentarios">Comentarios
+          </label>
+           <label for="otros">
+            <input type="checkbox" id="otros" name="intereses"value="otros">Otros
+          </label>
+        </div>
+       </div>
+        <div class="col2">
+          <label for="comentarios"> Comentarios</label>
+          <textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+          <input type="submit" value="Enviar" class="button"/>
+        </div>
+      </form>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <script>
+      var consulta= window.matchMedia("(max-width:500px");
+      consulta.addListener(mediaQuery);
+
+      var burgerButton= document.getElementById("burger-button");
+      var menu= document.getElementById("menu");
+      function toggleMenu(){
+      menu.classList.toggle("active");
+      };
+      function showMenu(){
+      menu.classList.add("active");
+      };
+      function hideMenu(){
+      menu.classList.remove("active");
+      };
+
+      function mediaQuery(){
+        if (consulta.matches){
+        console.log("si cumple la condicion");
+        burgerButton.addEventListener("touchstart", toggleMenu); 
+        } else{
+          burgerButton.removeEventListener("touchstart", toggleMenu); 
+          console.log("no se cumple la condicion");
+        }
+      }
+        mediaQuery();
+
+        var bLazy = new Blazy({
+            selector:"img"
+        });
+
+        //Gestos touch
+        var body = document.body;
+        var gestos = new Hammer(body);
+        gestos.on('swipeleft', hideMenu);
+        gestos.on('swiperight', showMenu);
+    </script>
+  </body> 
+</html>
+
